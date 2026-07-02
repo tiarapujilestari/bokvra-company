@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-caramel/40 text-espresso;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C89665;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs tracking-[0.25em] uppercase text-caramel-dark font-semibold;
+  }
+
+  .badge-ring {
+    @apply relative inline-flex items-center justify-center rounded-full border-2 border-espresso/80;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6 md:px-10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-espresso text-cream px-6 py-3 font-body font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-espresso-800 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-espresso/20 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-espresso text-espresso px-6 py-3 font-body font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-espresso hover:text-cream active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-espresso font-semibold text-sm underline decoration-caramel decoration-2 underline-offset-4 transition-colors hover:text-caramel-dark;
+  }
+
+  .field {
+    @apply w-full rounded-xl border-2 border-espresso/15 bg-white/60 px-4 py-3 font-body text-ink placeholder:text-ink/40 transition-colors focus:border-caramel focus:outline-none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
